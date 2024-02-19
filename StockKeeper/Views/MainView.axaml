@@ -1,0 +1,39 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			  xmlns:vm="clr-namespace:StockKeeper.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="StockKeeper.Views.MainView"
+	          x:DataType="vm:MainViewModel">
+	
+	<Grid>
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="60 0"  >
+		 <Button HorizontalAlignment="Right" Width="60" Margin="0 60 5 60" Content="Add"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Height="30" Command="{Binding AddsCommand}"></Button>
+		 <Button HorizontalAlignment="Right" Width="70" Margin="0 60 5 60" Content="Update" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Height="30" Command="{Binding UpdateCommand}" ></Button>
+			<Button HorizontalAlignment="Right" Width="70" Margin="0 0 30 0" Content="Delete" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="30" Command="{Binding DeleteCommand}"></Button>	
+		</StackPanel>
+
+		
+
+		<Grid Margin="100" >
+			<DataGrid ItemsSource="{Binding Path=StockList}" SelectedItem="{Binding Selecteditem }" BorderThickness="1" IsReadOnly="True"  >
+				<DataGrid.Columns>
+					<DataGridTextColumn Header="Item Name" Width="Auto" Binding="{Binding ItemName}"/>
+					<DataGridTextColumn Header="Description" Width="Auto" Binding="{Binding Description}"/>
+					<DataGridTextColumn Header="Invoice Date" Width="Auto" Binding="{Binding InvoiceDate}"/>
+					<DataGridTextColumn Header="Quantity" Width="Auto" Binding="{Binding Quantity}"/>
+					<DataGridTextColumn Header="Price" Width="Auto" Binding="{Binding Price}"/>
+					<DataGridTextColumn Header="Used" Width="Auto" Binding="{Binding Used}"/>
+					<DataGridTextColumn Header="Balance" Width="Auto" Binding="{Binding Balance}"/>
+					<DataGridTextColumn Header="Re-order" Width="Auto" Binding="{Binding Total}"/>
+					<DataGridTextColumn Header="Issued To" Width="Auto" Binding="{Binding IssedTo}"/>
+			     	</DataGrid.Columns>
+			</DataGrid>
+
+		</Grid>
+
+
+	</Grid>
+	
+</UserControl>

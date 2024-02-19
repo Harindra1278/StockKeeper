@@ -1,0 +1,86 @@
+<Window xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:StockKeeper.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="800"
+             x:Class="StockKeeper.Views.AddStockView"
+             x:DataType="vm:AddStockViewModel">
+	<Window.Styles>
+		<Style Selector="TextBlock">
+			<Setter Property="VerticalAlignment" Value="Center"/>
+			<Setter Property="FontWeight" Value="Bold"/>
+			<Setter Property="FontSize" Value="18"/>
+		</Style>
+		
+		<Style Selector="TextBox">
+			<Setter Property="Margin" Value="12"/>
+         </Style>
+		
+	</Window.Styles>
+
+<Grid ColumnDefinitions="Auto,299"
+		  RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+		  Margin="40"
+		  HorizontalAlignment="Center" >
+
+
+		<TextBlock Text="Add Update Stock" FontSize="25" Margin="1" HorizontalAlignment="Center" FontWeight="Bold" Grid.Row="0" Grid.ColumnSpan="2"></TextBlock>
+		<TextBlock Text="Item Name:" Grid.Row="1" ></TextBlock>
+		<TextBox Name="name" Grid.Row="1" Grid.Column="2" VerticalAlignment="Top"  Text="{Binding CurrentStock.ItemName}" />
+		<TextBlock x:Name="UserNameValidation" Grid.Row="1" Grid.Column="2"
+						 Foreground="Red"
+						 FontSize="12"  HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+
+		<TextBlock Text="Description:" Grid.Row="2"></TextBlock>
+		<TextBox Name="_description" Grid.Row="2" Grid.Column="2" VerticalAlignment="Top"  Text="{Binding CurrentStock.Description}" />
+		<TextBlock x:Name="UserDescriptionValidation" Grid.Row="2" Grid.Column="2"
+						 Foreground="Red"
+						 FontSize="12"  HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+
+		<TextBlock Text="Invoice Date:" Grid.Row="3"></TextBlock>
+		<TextBox Name="_invoicedate" Grid.Row="3" Grid.Column="2" VerticalAlignment="Top"  Text="{Binding CurrentStock.InvoiceDate}" />
+		<TextBlock x:Name="UserInvoiceValidation" Grid.Row="3" Grid.Column="2"
+						 Foreground="Red"
+						 FontSize="12"  HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+
+		<TextBlock Text="Quantity:" Grid.Row="4"></TextBlock>
+		<TextBox Name="_quantity" Grid.Row="4" Grid.Column="2" VerticalAlignment="Top"  Text="{Binding CurrentStock.Quantity}" />
+		<TextBlock x:Name="UserQuantityValidation" Grid.Row="4" Grid.Column="2"
+						 Foreground="Red"
+						 FontSize="12"  HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+
+		<TextBlock Text="Price:" Grid.Row="5"></TextBlock>
+		<TextBox Name="_price" Grid.Row="5" Grid.Column="2" VerticalAlignment="Top" Text="{Binding CurrentStock.Price}"/>
+		<TextBlock x:Name="UserPriceValidation" Grid.Row="5" Grid.Column="2"
+						 Foreground="Red"
+						 FontSize="12"  HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+
+		<TextBlock Text="Used:" Grid.Row="6"></TextBlock>
+		<TextBox Name="_used" Grid.Row="6" Grid.Column="2" VerticalAlignment="Top" Text="{Binding CurrentStock.Used}"/>
+		<TextBlock x:Name="UserUsedValidation" Grid.Row="6" Grid.Column="2"
+						 Foreground="Red"
+						 FontSize="12"  HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+
+		<TextBlock Text="Balance:" Grid.Row="7"></TextBlock>
+		<TextBox Name="_balance" Grid.Row="7" Grid.Column="2" VerticalAlignment="Top" Text="{Binding CurrentStock.Balance}"/>
+		<TextBlock x:Name="UserBalanceValidation" Grid.Row="7" Grid.Column="2"
+						 Foreground="Red"
+						 FontSize="12"  HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+
+		<TextBlock Text="Re-order:" Grid.Row="8"></TextBlock>
+		<TextBox Name="_total" Grid.Row="8" Grid.Column="2" VerticalAlignment="Top" Text="{Binding CurrentStock.Total}"/>
+		<TextBlock x:Name="UserTotalValidation" Grid.Row="8" Grid.Column="2"
+						 Foreground="Red"
+						 FontSize="12"  HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+
+		<TextBlock Text="Issed To:" Grid.Row="9"></TextBlock>
+		<TextBox  Name="_issed" Grid.Row="9" Grid.Column="2" VerticalAlignment="Top" Text="{Binding CurrentStock.IssedTo}"/>
+		<TextBlock x:Name="UserIssedValidation" Grid.Row="9" Grid.Column="2"
+						 Foreground="Red"
+						 FontSize="12"  HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+		<Button Grid.ColumnSpan="2" Grid.Row="10" Content="AddUpdate" FontWeight="Bold" Margin="0 12" FontSize="25" HorizontalAlignment="Center"   HorizontalContentAlignment="Center" Command="{Binding AddCommand}"></Button>
+
+
+	</Grid>
+</Window>
