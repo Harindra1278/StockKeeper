@@ -7,6 +7,10 @@
              x:Class="StockKeeper.Views.AddStockView"
              x:DataType="vm:AddStockViewModel">
 	<Window.Styles>
+		<Style Selector="Grid">
+			<Setter Property="Background" Value="IndianRed"/>
+			
+		</Style>
 		<Style Selector="TextBlock">
 			<Setter Property="VerticalAlignment" Value="Center"/>
 			<Setter Property="FontWeight" Value="Bold"/>
@@ -22,7 +26,7 @@
 <Grid ColumnDefinitions="Auto,299"
 		  RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
 		  Margin="40"
-		  HorizontalAlignment="Center" >
+		  HorizontalAlignment="Center"  Name="body" >
 
 
 		<TextBlock Text="Add Update Stock" FontSize="25" Margin="1" HorizontalAlignment="Center" FontWeight="Bold" Grid.Row="0" Grid.ColumnSpan="2"></TextBlock>

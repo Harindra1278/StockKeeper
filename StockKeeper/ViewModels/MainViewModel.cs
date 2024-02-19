@@ -25,7 +25,7 @@ namespace StockKeeper.ViewModels
         public MainViewModel(MainView mainView)
         {
             
-            var  execute = () =>
+            var  deleteexecute = () =>
             {
                 if (Selecteditem == null) return;
                 stockService.Delete(Selecteditem.Id);
@@ -33,7 +33,7 @@ namespace StockKeeper.ViewModels
             };
             var addExecute = async () =>
             {
-               // stockService.add(CurrentStock);
+               
                 var opReturn = await mainView.Add();
                 if(opReturn != null)
                 {
@@ -49,7 +49,7 @@ namespace StockKeeper.ViewModels
             };
 
             
-            DeleteCommand = ReactiveCommand.Create(execute);//,canDelete);
+            DeleteCommand = ReactiveCommand.Create(deleteexecute);
             AddsCommand = ReactiveCommand.CreateFromTask(addExecute);  
             UpdateCommand = ReactiveCommand.CreateFromTask(updateexecute);
             stockService = new StockService(this);
